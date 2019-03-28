@@ -1,0 +1,44 @@
+//
+//  PrefixHeader.pch
+//  demos
+//
+//  Created by 朱伟阁 on 2018/12/5.
+//  Copyright © 2018 朱伟阁. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+#define UICOLOR_HEX(hexString) [UIColor colorWithRed:((float)((hexString &0xFF0000) >>16))/255.0 green:((float)((hexString &0xFF00) >>8))/255.0 blue:((float)(hexString &0xFF))/255.0 alpha:1.0]
+#define UICOLOR_RGB(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+#define UICOLOR_RANDOM  [UIColor colorWithRed:(arc4random()%255)/255.0 green:(arc4random()%255)/255.0 blue:(arc4random()%255)/255.0 alpha:1.0]
+#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define iPhoneXx ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define WeakSelf __weak typeof(self) weakSelf = self;
+// 宽比 等比缩放适配屏幕
+#define FITW  [UIScreen mainScreen].bounds.size.width/375
+// 高比 等比缩放适配屏幕
+#define FITH  [UIScreen mainScreen].bounds.size.height/667
+//// 导航栏下面分割线颜色
+//#define LineColor    [UIColor colorWithHexStringToColor:@"#CCCCCC" alpha:1]
+//字体格式
+#define FONTNAMEMIDDLE @"PingFangSC-Medium"
+#define FONTNAME @"PingFangSC-Regular"
+#define FONTNAMELIGHT @"PingFangSC-Light"
+#define kNavigationViewH  (iPhoneXx?88:64)
+#define kStatusHeight  (iPhoneXx?44:20)
+#define kTabBarHeight  (iPhoneXx?83:49)
+#define kSafeAreaBottom (iPhoneXx?34:0)
+#define RandomColor [UIColor colorWithRed:arc4random_uniform(255) / 256.0 green:arc4random_uniform(255) / 256.0 blue:arc4random_uniform(255) / 256.0 alpha:1]
+//#import "Define.h"
+//#import "SSDeviceDefault.h"
+#import <MJExtension.h>
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import <MBProgressHUD.h>
+//#import <SDCycleScrollView.h>
+#import "UIViewController+ExtendCtr.h"
+
+#endif /* PrefixHeader_pch */
