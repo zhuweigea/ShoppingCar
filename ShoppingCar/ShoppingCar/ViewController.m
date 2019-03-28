@@ -26,6 +26,7 @@
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:btn];
     [btn addTarget:self action:@selector(goShopping) forControlEvents:UIControlEventTouchUpInside];
+    //添加
 }
 
 - (void)goShopping{
